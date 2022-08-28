@@ -1,3 +1,5 @@
+package Main;
+
 public class Question {
     private String fullSentence ="Working at Andeo is a great experience!";
     private String incompleteSentence ="Bei Andeo zu arbeiten ist eine grossartige _____ !";
@@ -13,5 +15,9 @@ public class Question {
 
     public String getResult() {
         return result;
+    }
+
+    public boolean checkAnswer(String input){
+        return input.equalsIgnoreCase(getResult());
     }
 }

@@ -1,6 +1,5 @@
-import jdk.dynalink.linker.LinkerServices;
+package Main;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,18 +15,19 @@ public class LanguageLearner {
     }
 
     public void run(Question question){
+        /* console
         while (true){
             System.out.println(question.getFullSentence());
             System.out.println(question.getIncompleteSentence());
             String input=sc.next();
 
-            if (input.equalsIgnoreCase(question.getResult())){
+            if (question.checkAnswer(input)){
                 System.out.println("Richtig");
                 break;
             }else {
                 System.out.println("Falsch");
             }
-        }
+        }*/
     }
 
     public static void main(String[] args) {
