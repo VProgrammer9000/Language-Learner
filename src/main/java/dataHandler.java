@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class dataHandler {
+    //TODO Add JSON File
     private static List<String> firstLanguage;
     private static List<String> secondLanguage;
 

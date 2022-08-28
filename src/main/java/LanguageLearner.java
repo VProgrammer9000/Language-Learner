@@ -1,21 +1,32 @@
+import jdk.dynalink.linker.LinkerServices;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class LanguageLearner {
         public static Scanner sc=new Scanner(System.in);
-    public LanguageLearner(){
+        List<Question> questions= new ArrayList<>();
 
-        run();
+    public LanguageLearner(){
+        questions.add(new Question());
+        run(questions.get(0));
 
     }
 
-    public void run(){
-        System.out.println(dataHandler.getFirstLanguage().get(0));
-        System.out.println(dataHandler.getSecondLanguage());
-        String input=sc.next();
-        if (input.equalsIgnoreCase("")){//TODO
-            System.out.println("Richtig");
-        }else {
-            System.out.println("Falsch");
+    public void run(Question question){
+        while (true){
+            System.out.println(question.getFullSentence());
+            System.out.println(question.getIncompleteSentence());
+            String input=sc.next();
+
+            if (input.equalsIgnoreCase(question.getResult())){
+                System.out.println("Richtig");
+                break;
+            }else {
+                System.out.println("Falsch");
+            }
         }
     }
 
