@@ -1,8 +1,13 @@
-package Gui;
+package gui;
+
+import dataHandler.DataHandler;
+import main.Question;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.sql.DatabaseMetaData;
+import java.util.List;
 
 public class MainFrame extends JFrame {
     CardLayout cardLayout=new CardLayout();

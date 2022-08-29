@@ -1,9 +1,9 @@
-package Main;
+package main;
 
 public class Question {
     private String fullSentence ="Working at Andeo is a great experience!";
     private String incompleteSentence ="Bei Andeo zu arbeiten ist eine grossartige _____ !";
-    private String result = "Erfahrung";
+    private String[] allResult = {"Erfahrung"};
 
     public String getFullSentence() {
         return fullSentence;
@@ -13,11 +13,16 @@ public class Question {
         return incompleteSentence;
     }
 
-    public String getResult() {
-        return result;
+    public String[] getAllResult() {
+        return allResult;
     }
 
     public boolean checkAnswer(String input){
-        return input.equalsIgnoreCase(getResult());
+        for (String result:allResult) {
+            if (input.equalsIgnoreCase(result)){
+                return true;
+            }
+        }
+        return false;
     }
 }

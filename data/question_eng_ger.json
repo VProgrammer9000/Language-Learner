@@ -1,0 +1,12 @@
+[
+  {
+    "fullSentence": "Working at Andeo is a great experience!",
+    "incompleteSentence": "Bei Andeo zu arbeiten ist eine grossartige _!",
+    "allResult": ["Erfahrung"]
+  },
+  {
+    "fullSentence": "Programming is fun!",
+    "incompleteSentence": "Programmieren macht _!",
+    "allResult": ["Spass", "Freude"]
+  }
+]

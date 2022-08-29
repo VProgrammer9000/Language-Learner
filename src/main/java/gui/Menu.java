@@ -1,10 +1,10 @@
-package Gui;
+package gui;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import DataHandler.DataHandler;
+import dataHandler.DataHandler;
 
 public class Menu extends JPanel {
     MainFrame mainFrame;
