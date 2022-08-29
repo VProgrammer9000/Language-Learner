@@ -1,13 +1,10 @@
 package gui;
 
 import dataHandler.DataHandler;
-import main.Question;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.sql.DatabaseMetaData;
-import java.util.List;
 
 public class MainFrame extends JFrame {
     CardLayout cardLayout=new CardLayout();
@@ -18,21 +15,23 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,500);
 
+        DataHandler.init();
+
         mainPanel.setBackground(Color.cyan);
         mainPanel.setBorder(new EmptyBorder(20,20,20,20));
 
         add(mainPanel);
-        mainPanel.add(new Menu(this),"menu");
-        mainPanel.add(new Menu(this),"question");
-
-        cardLayout.show(mainPanel,"menu");
+        mainPanel.add(new QuestionGui(this),"question");
 
         setVisible(true);
     }
 
-    public void openQuestion(){
+
+    public void restart(){
+        mainPanel.add(new QuestionGui(this),"question");
         cardLayout.show(mainPanel,"question");
     }
+
     public static void main(String[] args) {
         new MainFrame();
     }

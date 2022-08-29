@@ -1,9 +1,9 @@
 package main;
 
 public class Question {
-    private String fullSentence ="Working at Andeo is a great experience!";
-    private String incompleteSentence ="Bei Andeo zu arbeiten ist eine grossartige _____ !";
-    private String[] allResult = {"Erfahrung"};
+    private String fullSentence;
+    private String incompleteSentence;
+    private String[] allResult;
 
     public String getFullSentence() {
         return fullSentence;
