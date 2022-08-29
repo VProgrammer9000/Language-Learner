@@ -1,7 +1,11 @@
 package DataHandler;
 
 import Main.Question;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +34,7 @@ public class DataHandler {
     public static String[] getAnswerLanguages(String selectedQuestionLanguage) {
         return listToArray(answerLanguages); //TODO
     }
+
     private static String[] listToArray(List<String> list){
         String[] str = new String[list.size()];
 
@@ -37,5 +42,21 @@ public class DataHandler {
             str[i] = list.get(i);
         }
         return str;
+    }
+
+
+    private static void readQuestionListJSON() {
+        List <Question> questionList = new ArrayList<>();
+        try {
+            byte[] jsonData = Files.readAllBytes(Paths.get("PATH"));// TODO Path
+            ObjectMapper objectMapper = new ObjectMapper();
+            Question[] questions = objectMapper.readValue(jsonData, Question[].class);
+            for (Question question : questions) {
+                questionList.add(question);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
