@@ -1,6 +1,7 @@
 package gui;
 
 import dataHandler.DataHandler;
+import main.Question;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -9,6 +10,7 @@ import java.awt.*;
 public class MainFrame extends JFrame {
     CardLayout cardLayout=new CardLayout();
     JPanel mainPanel=new JPanel(cardLayout);
+    QuestionGui questionGui;
 
     public MainFrame(){
         setTitle("Language Lerner");
@@ -17,18 +19,35 @@ public class MainFrame extends JFrame {
 
         DataHandler.init();
 
+
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         mainPanel.setBackground(Color.cyan);
         mainPanel.setBorder(new EmptyBorder(20,20,20,20));
 
         add(mainPanel);
-        mainPanel.add(new QuestionGui(this),"question");
+
+        questionGui= new QuestionGui(this, true);
+        mainPanel.add(questionGui,"question");
 
         setVisible(true);
     }
 
 
     public void restart(){
-        mainPanel.add(new QuestionGui(this),"question");
+        questionGui = new QuestionGui(this,true);
+        mainPanel.add(questionGui,"question");
+        cardLayout.show(mainPanel,"question");
+        questionGui.resetAllQuestion();
+    }
+
+    public void restartAllWrong(){
+        questionGui = new QuestionGui(this, false);
+        mainPanel.add(questionGui, "question");
         cardLayout.show(mainPanel,"question");
     }
 

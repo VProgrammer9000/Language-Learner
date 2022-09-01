@@ -8,5 +8,20 @@
     "fullSentence": "Programming is fun!",
     "incompleteSentence": "Programmieren macht _!",
     "allResult": ["Spass", "Freude"]
+  },
+  {
+    "fullSentence": "I like pizza!",
+    "incompleteSentence": "Ich _ Pizza!",
+    "allResult": ["mag", "liebe"]
+  },
+  {
+    "fullSentence": "In the forest are trees!",
+    "incompleteSentence": "Im  _ sind Bäume!",
+    "allResult": ["Wald"]
+  },
+  {
+    "fullSentence": "Drinking water is healthy!",
+    "incompleteSentence": "_ zu trinken ist gesund!",
+    "allResult": ["Wasser"]
   }
 ]
